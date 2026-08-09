@@ -98,7 +98,7 @@ export const ProductTable = ({ onEdit, onProductChanged }) => {
 
                     {/* Price */}
                     <td className="py-3 px-4 font-mono font-bold text-slate-900 dark:text-slate-100">
-                      ${product.price.toFixed(2)}
+                      ₹{product.price.toLocaleString('en-IN')}
                     </td>
 
                     {/* Stock Status */}

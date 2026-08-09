@@ -68,13 +68,13 @@ export const ProductModal = () => {
                 {selectedProduct.title}
               </h2>
 
-              <div className="flex items-baseline gap-2">
+              <div className="flex items-baseline gap-2 font-mono">
                 <span className="text-2xl font-black text-slate-900 dark:text-white">
-                  ${selectedProduct.price.toFixed(2)}
+                  ₹{selectedProduct.price.toLocaleString('en-IN')}
                 </span>
                 {selectedProduct.original_price && (
-                  <span className="text-sm text-slate-400 line-through font-mono">
-                    ${selectedProduct.original_price.toFixed(2)}
+                  <span className="text-sm text-slate-400 line-through">
+                    ₹{selectedProduct.original_price.toLocaleString('en-IN')}
                   </span>
                 )}
               </div>

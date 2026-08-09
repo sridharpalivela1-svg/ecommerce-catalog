@@ -151,13 +151,13 @@ export const ProductFormModal = ({ productToEdit, onClose, onSuccess }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
-                Selling Price ($) *
+                Selling Price (₹) *
               </label>
               <input
                 type="number"
-                step="0.01"
+                step="1"
                 required
-                placeholder="199.99"
+                placeholder="64999"
                 value={formData.price}
                 onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                 className="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 font-mono"
@@ -166,12 +166,12 @@ export const ProductFormModal = ({ productToEdit, onClose, onSuccess }) => {
 
             <div>
               <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
-                Original MSRP Price ($)
+                Original MSRP Price (₹)
               </label>
               <input
                 type="number"
-                step="0.01"
-                placeholder="249.99 (Optional)"
+                step="1"
+                placeholder="69999 (Optional)"
                 value={formData.original_price}
                 onChange={(e) => setFormData({ ...formData, original_price: e.target.value })}
                 className="w-full px-3.5 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 font-mono"

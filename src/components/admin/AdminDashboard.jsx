@@ -109,7 +109,7 @@ export const AdminDashboard = () => {
           <div className="space-y-1">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Sales</span>
             <p className="text-2xl font-black text-emerald-600 dark:text-emerald-400 font-mono">
-              ${stats ? stats.total_revenue.toFixed(2) : '0.00'}
+              ₹{stats ? Math.round(stats.total_revenue).toLocaleString('en-IN') : '0'}
             </p>
           </div>
           <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">

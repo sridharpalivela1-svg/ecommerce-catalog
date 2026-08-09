@@ -22,13 +22,9 @@ const setStoredData = (key, data) => {
   }
 };
 
-// Initialize default stored items if empty
-if (!localStorage.getItem('ec_products')) {
-  setStoredData('ec_products', INITIAL_PRODUCTS);
-}
-if (!localStorage.getItem('ec_categories')) {
-  setStoredData('ec_categories', INITIAL_CATEGORIES);
-}
+// Initialize default stored items
+setStoredData('ec_products', INITIAL_PRODUCTS);
+setStoredData('ec_categories', INITIAL_CATEGORIES);
 if (!localStorage.getItem('ec_orders')) {
   setStoredData('ec_orders', INITIAL_ORDERS);
 }

@@ -95,7 +95,7 @@ export const CartDrawer = () => {
                           </button>
                         </div>
                         <span className="text-xs font-mono text-indigo-600 dark:text-indigo-400 font-semibold">
-                          ${item.price.toFixed(2)}
+                          ₹{item.price.toLocaleString('en-IN')}
                         </span>
                       </div>
 
@@ -119,8 +119,8 @@ export const CartDrawer = () => {
                           </button>
                         </div>
 
-                        <span className="text-xs font-bold text-slate-900 dark:text-slate-100">
-                          ${(item.price * item.quantity).toFixed(2)}
+                        <span className="text-xs font-bold text-slate-900 dark:text-slate-100 font-mono">
+                          ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                         </span>
                       </div>
 
@@ -159,7 +159,7 @@ export const CartDrawer = () => {
                     <span className="flex items-center gap-1 font-semibold">
                       <Check className="w-3.5 h-3.5" /> Promo "{promoCode}" Applied
                     </span>
-                    <span>-{(discountAmount).toFixed(2)}</span>
+                    <span className="font-mono">-₹{Math.round(discountAmount).toLocaleString('en-IN')}</span>
                   </div>
                 )}
 
@@ -167,28 +167,28 @@ export const CartDrawer = () => {
                 <div className="space-y-1.5 text-xs">
                   <div className="flex justify-between text-slate-500 dark:text-slate-400">
                     <span>Subtotal</span>
-                    <span className="font-mono text-slate-800 dark:text-slate-200">${subtotal.toFixed(2)}</span>
+                    <span className="font-mono text-slate-800 dark:text-slate-200">₹{Math.round(subtotal).toLocaleString('en-IN')}</span>
                   </div>
                   {discountAmount > 0 && (
                     <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-semibold">
                       <span>Discount</span>
-                      <span className="font-mono">-${discountAmount.toFixed(2)}</span>
+                      <span className="font-mono">-₹{Math.round(discountAmount).toLocaleString('en-IN')}</span>
                     </div>
                   )}
                   <div className="flex justify-between text-slate-500 dark:text-slate-400">
                     <span>Estimated Tax (8%)</span>
-                    <span className="font-mono text-slate-800 dark:text-slate-200">${taxAmount.toFixed(2)}</span>
+                    <span className="font-mono text-slate-800 dark:text-slate-200">₹{Math.round(taxAmount).toLocaleString('en-IN')}</span>
                   </div>
                   <div className="flex justify-between text-slate-500 dark:text-slate-400">
                     <span>Shipping</span>
                     <span className="font-mono text-slate-800 dark:text-slate-200">
-                      {shippingAmount === 0 ? 'FREE' : `$${shippingAmount.toFixed(2)}`}
+                      {shippingAmount === 0 ? 'FREE' : `₹${shippingAmount}`}
                     </span>
                   </div>
                   <div className="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-baseline text-base font-bold text-slate-900 dark:text-white">
                     <span>Total Amount</span>
                     <span className="text-xl font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">
-                      ${grandTotal.toFixed(2)}
+                      ₹{Math.round(grandTotal).toLocaleString('en-IN')}
                     </span>
                   </div>
                 </div>

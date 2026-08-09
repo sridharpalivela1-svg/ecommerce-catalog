@@ -1,5 +1,5 @@
 import React from 'react';
-import { Filter, RotateCcw, ArrowUpDown, Tag, DollarSign } from 'lucide-react';
+import { Filter, RotateCcw, ArrowUpDown, Tag, IndianRupee } from 'lucide-react';
 import { useProducts } from '../../context/ProductContext';
 
 export const FilterSidebar = () => {
@@ -77,25 +77,25 @@ export const FilterSidebar = () => {
         <div className="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
           <div className="flex justify-between items-center">
             <label className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-              <DollarSign className="w-3.5 h-3.5 text-emerald-500" /> Max Price
+              <IndianRupee className="w-3.5 h-3.5 text-emerald-500" /> Max Price
             </label>
-            <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
-              ${priceRange[1]}
+            <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400 font-mono">
+              ₹{priceRange[1].toLocaleString('en-IN')}
             </span>
           </div>
           <input
             type="range"
-            min="10"
-            max="500"
-            step="10"
+            min="1000"
+            max="200000"
+            step="1000"
             value={priceRange[1]}
             onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
             className="w-full accent-indigo-600 cursor-pointer h-2 rounded-lg bg-slate-200 dark:bg-slate-800"
           />
           <div className="flex justify-between text-xs text-slate-400 font-mono">
-            <span>$0</span>
-            <span>$250</span>
-            <span>$500</span>
+            <span>₹0</span>
+            <span>₹1L</span>
+            <span>₹2L</span>
           </div>
         </div>
 

@@ -13,7 +13,7 @@ export const ProductProvider = ({ children, showToast }) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOption, setSortOption] = useState('newest');
-  const [priceRange, setPriceRange] = useState([0, 500]);
+  const [priceRange, setPriceRange] = useState([0, 200000]);
   const [selectedProduct, setSelectedProduct] = useState(null); // For Quick View Modal
 
   // Load products with current active filters
@@ -94,7 +94,7 @@ export const ProductProvider = ({ children, showToast }) => {
     setSelectedCategory('all');
     setSearchQuery('');
     setSortOption('newest');
-    setPriceRange([0, 500]);
+    setPriceRange([0, 200000]);
   };
 
   return (

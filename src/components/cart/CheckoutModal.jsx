@@ -110,7 +110,7 @@ export const CheckoutModal = ({ onClose }) => {
               </div>
               <div className="flex justify-between text-sm pt-1 border-t border-slate-200 dark:border-slate-700 font-bold">
                 <span className="text-slate-800 dark:text-slate-200">Total Paid:</span>
-                <span className="text-emerald-600 dark:text-emerald-400">${orderCompleted.total.toFixed(2)}</span>
+                <span className="text-emerald-600 dark:text-emerald-400">₹{Math.round(orderCompleted.total).toLocaleString('en-IN')}</span>
               </div>
             </div>
 
@@ -198,16 +198,16 @@ export const CheckoutModal = ({ onClose }) => {
             <div className="p-4 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-800/60 space-y-1 text-xs">
               <div className="flex justify-between text-slate-600 dark:text-slate-400">
                 <span>Items ({cartItems.length}):</span>
-                <span className="font-mono">${subtotal.toFixed(2)}</span>
+                <span className="font-mono">₹{Math.round(subtotal).toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between text-slate-600 dark:text-slate-400">
                 <span>Taxes & Shipping:</span>
-                <span className="font-mono">${taxAmount.toFixed(2)}</span>
+                <span className="font-mono">₹{Math.round(taxAmount).toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between text-sm font-bold text-indigo-900 dark:text-indigo-200 pt-1 border-t border-indigo-200/50 dark:border-indigo-800">
                 <span>Total Amount Due:</span>
                 <span className="text-base text-indigo-600 dark:text-indigo-400 font-extrabold font-mono">
-                  ${grandTotal.toFixed(2)}
+                  ₹{Math.round(grandTotal).toLocaleString('en-IN')}
                 </span>
               </div>
             </div>
@@ -224,7 +224,7 @@ export const CheckoutModal = ({ onClose }) => {
                 </>
               ) : (
                 <>
-                  <PackageCheck className="w-4 h-4" /> Place Order (${grandTotal.toFixed(2)})
+                  <PackageCheck className="w-4 h-4" /> Place Order (₹{Math.round(grandTotal).toLocaleString('en-IN')})
                 </>
               )}
             </button>
