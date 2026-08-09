@@ -18,7 +18,6 @@ export const ProductProvider = ({ children, showToast }) => {
 
   // Load products with current active filters
   const fetchProducts = useCallback(async () => {
-    setLoading(true);
     try {
       const data = await apiService.getProducts({
         category: selectedCategory,

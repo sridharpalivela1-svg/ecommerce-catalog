@@ -68,9 +68,13 @@ export const apiService = {
     }
 
     if (search && search.trim() !== '') {
-      const q = search.toLowerCase();
+      const q = search.toLowerCase().trim();
       products = products.filter(
-        p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+        p => p.title.toLowerCase().includes(q) ||
+             p.description.toLowerCase().includes(q) ||
+             (p.category_name && p.category_name.toLowerCase().includes(q)) ||
+             (p.badge && p.badge.toLowerCase().includes(q)) ||
+             (p.features && Array.isArray(p.features) && p.features.some(f => f.toLowerCase().includes(q)))
       );
     }
 
